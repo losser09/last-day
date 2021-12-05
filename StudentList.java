@@ -4,14 +4,15 @@ import java.util.*;
 
 public class StudentList {
     public static void main(String[] args) {
+    	//for calling the constants class::
 		Constants constants = new Constants(); //task5
 //		Check arguments
 		if (args[0].equals(constants.a)) {
 			System.out.println("Loading data ...");
 			try {
-				BufferedReader bufferedReader = dup_Rfile();
+				BufferedReader bufferedReader = dup_Rfile(); //avoiding the duplicate file
 				//String str = bufferedReader.readLine();
-				String line[] = bufferedReader.readLine().split(",");
+				String line[] = bufferedReader.readLine().split(","); //removing the temporary variable.
 				for (String ch : line) {
 					System.out.println(ch);
 				}
@@ -57,6 +58,8 @@ public class StudentList {
 				for (int idx = 0; idx < line.length; idx++) {
 					if (line[idx].equals(substr)) {
 						System.out.println("We found it!");
+
+						//done is removed because it can occur control-flow
 						//done = true;
 						break;
 					}
@@ -72,6 +75,7 @@ public class StudentList {
 				char charcter[] = bufferedReader.readLine().toCharArray();
 				boolean in_word = false;
 				int count = 0;
+				//simplication of word count logic
 				for (char ch : charcter) {
 					if (ch == ' ') {
 						if (!in_word) {
