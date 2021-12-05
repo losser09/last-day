@@ -9,9 +9,7 @@ public class StudentList {
 		if (args[0].equals("a")) {
 			System.out.println("Loading data ...");
 			try {
-				BufferedReader bufferedReader = new BufferedReader(
-						new InputStreamReader(
-								new FileInputStream("students.txt")));
+				BufferedReader bufferedReader = dup_Rfile();
 				String str = bufferedReader.readLine();
 				String line[] = str.split(",");
 				for (String ch : line) {
@@ -23,9 +21,7 @@ public class StudentList {
 		} else if (args[0].equals("r")) {
 			System.out.println("Loading data ...");
 			try {
-				BufferedReader bufferedReader = new BufferedReader(
-						new InputStreamReader(
-								new FileInputStream("students.txt")));
+				BufferedReader bufferedReader = dup_Rfile();
 				String str = bufferedReader.readLine();
 				System.out.println(str);
 				String line[] = str.split(",");
@@ -38,8 +34,7 @@ public class StudentList {
 		} else if (args[0].contains("+")) {
 			System.out.println("Loading data ...");
 			try {
-				BufferedWriter bufferedWriter = new BufferedWriter(
-						new FileWriter("students.txt", true));
+				BufferedWriter bufferedWriter = dup_Wfile();
 				String substr = args[0].substring(1);
 				Date d = new Date();
 				String df = "dd/mm/yyyy-hh:mm:ss a";
@@ -54,9 +49,7 @@ public class StudentList {
 		} else if (args[0].contains("?")) {
 			System.out.println("Loading data ...");
 			try {
-				BufferedReader bufferedReader = new BufferedReader(
-						new InputStreamReader(
-								new FileInputStream("students.txt")));
+				BufferedReader bufferedReader = dup_Rfile();
 				String str = bufferedReader.readLine();
 				String line[] = str.split(",");
 				boolean done = false;
@@ -73,9 +66,7 @@ public class StudentList {
 		} else if (args[0].contains("c")) {
 			System.out.println("Loading data ...");
 			try {
-				BufferedReader bufferedReader = new BufferedReader(
-						new InputStreamReader(
-								new FileInputStream("students.txt")));
+				BufferedReader bufferedReader = dup_Rfile();
 				String D = bufferedReader.readLine();
 				char charcter[] = D.toCharArray();
 				boolean in_word = false;
@@ -98,6 +89,35 @@ public class StudentList {
 	}
          static void alert(){
         	System.out.println("some error occur");}
+
+        	static BufferedReader dup_Rfile()
+			{
+				BufferedReader tmp = null;
+
+				try{
+					tmp =  new BufferedReader(
+							new InputStreamReader(
+									new FileInputStream("students.txt")));
+				}
+				catch (Exception e)
+				{
+					alert();
+				}
+				return tmp;
+			}
+
+			static BufferedWriter dup_Wfile(){
+    		BufferedWriter tmp = null;
+
+    		try{
+    			tmp = new BufferedWriter(
+						new FileWriter("students.txt", true));
+			}
+    		catch(Exception e){
+    			alert();
+			}
+    		return tmp;
+			}
 
 
 }
