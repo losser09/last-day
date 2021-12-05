@@ -54,7 +54,7 @@ public class StudentList {
 				String line[] = bufferedReader.readLine().split(",");
 				//boolean done = false;
 				String substr = args[0].substring(1);
-				for (int idx = 0; idx < line.length && !done; idx++) {
+				for (int idx = 0; idx < line.length; idx++) {
 					if (line[idx].equals(substr)) {
 						System.out.println("We found it!");
 						//done = true;
@@ -75,11 +75,11 @@ public class StudentList {
 				for (char ch : charcter) {
 					if (ch == ' ') {
 						if (!in_word) {
-							count++;
-							in_word = true;
-						} else {
-							in_word = false;
-						}
+							count++;}   //found four words
+							//in_word = true;
+//						} else {
+//							in_word = false;
+//						}
 					}
 				}
 				System.out.println(count + " word(s) found " + charcter.length);
