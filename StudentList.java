@@ -4,9 +4,9 @@ import java.util.*;
 
 public class StudentList {
     public static void main(String[] args) {
-
+		Constants constants = new Constants();
 //		Check arguments
-		if (args[0].equals("a")) {
+		if (args[0].equals(constants.a)) {
 			System.out.println("Loading data ...");
 			try {
 				BufferedReader bufferedReader = dup_Rfile();
@@ -18,7 +18,7 @@ public class StudentList {
 			} catch (Exception e) {
 			}
 			System.out.println("Data Loaded.");
-		} else if (args[0].equals("r")) {
+		} else if (args[0].equals(constants.r)) {
 			System.out.println("Loading data ...");
 			try {
 				BufferedReader bufferedReader = dup_Rfile();
@@ -31,7 +31,7 @@ public class StudentList {
 			} catch (Exception e) {
 			}
 			System.out.println("Data Loaded.");
-		} else if (args[0].contains("+")) {
+		} else if (args[0].contains(constants.p)) {
 			System.out.println("Loading data ...");
 			try {
 				BufferedWriter bufferedWriter = dup_Wfile();
@@ -46,7 +46,7 @@ public class StudentList {
 			}
 
 			System.out.println("Data Loaded.");
-		} else if (args[0].contains("?")) {
+		} else if (args[0].contains(constants.q)) {
 			System.out.println("Loading data ...");
 			try {
 				BufferedReader bufferedReader = dup_Rfile();
@@ -63,7 +63,7 @@ public class StudentList {
 			} catch (Exception e) {
 			}
 			System.out.println("Data Loaded.");
-		} else if (args[0].contains("c")) {
+		} else if (args[0].contains(constants.c)) {
 			System.out.println("Loading data ...");
 			try {
 				BufferedReader bufferedReader = dup_Rfile();
