@@ -52,12 +52,13 @@ public class StudentList {
 				BufferedReader bufferedReader = dup_Rfile();
 				//String str = bufferedReader.readLine();
 				String line[] = bufferedReader.readLine().split(",");
-				boolean done = false;
+				//boolean done = false;
 				String substr = args[0].substring(1);
 				for (int idx = 0; idx < line.length && !done; idx++) {
 					if (line[idx].equals(substr)) {
 						System.out.println("We found it!");
-						done = true;
+						//done = true;
+						break;
 					}
 				}
 			} catch (Exception e) {
