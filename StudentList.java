@@ -4,14 +4,14 @@ import java.util.*;
 
 public class StudentList {
     public static void main(String[] args) {
-		Constants constants = new Constants();
+		Constants constants = new Constants(); //task5
 //		Check arguments
 		if (args[0].equals(constants.a)) {
 			System.out.println("Loading data ...");
 			try {
 				BufferedReader bufferedReader = dup_Rfile();
-				String str = bufferedReader.readLine();
-				String line[] = str.split(",");
+				//String str = bufferedReader.readLine();
+				String line[] = bufferedReader.readLine().split(",");
 				for (String ch : line) {
 					System.out.println(ch);
 				}
@@ -50,8 +50,8 @@ public class StudentList {
 			System.out.println("Loading data ...");
 			try {
 				BufferedReader bufferedReader = dup_Rfile();
-				String str = bufferedReader.readLine();
-				String line[] = str.split(",");
+				//String str = bufferedReader.readLine();
+				String line[] = bufferedReader.readLine().split(",");
 				boolean done = false;
 				String substr = args[0].substring(1);
 				for (int idx = 0; idx < line.length && !done; idx++) {
@@ -67,8 +67,8 @@ public class StudentList {
 			System.out.println("Loading data ...");
 			try {
 				BufferedReader bufferedReader = dup_Rfile();
-				String D = bufferedReader.readLine();
-				char charcter[] = D.toCharArray();
+				//String D = bufferedReader.readLine();
+				char charcter[] = bufferedReader.readLine().toCharArray();
 				boolean in_word = false;
 				int count = 0;
 				for (char ch : charcter) {
